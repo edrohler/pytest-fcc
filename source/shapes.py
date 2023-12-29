@@ -33,3 +33,13 @@ class Rectangle(Shape):
     
     def perimeter(self):
         return 2 * (self.length + self.width)
+    
+class Square(Rectangle):
+    def __init__(self, length):
+        super().__init__(length, length)
+        
+    def __eq__(self, other):
+        if not isinstance(other, Square):
+            return False
+        
+        return self.length == other.length
